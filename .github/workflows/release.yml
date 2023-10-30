@@ -22,9 +22,9 @@ jobs:
         run: cp accessibility/_accessibility.scss eleventy/src/_styles/_accessibility.scss
       
       - name: Create zip files
-        run: zip -r ${{ matrix.dirs }} ${{ matrix.dirs }}
+        run: zip -r ${{ matrix.dirs }}.zip ${{ matrix.dirs }}
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ matrix.dirs }}
+          files: ${{ matrix.dirs }}.zip
