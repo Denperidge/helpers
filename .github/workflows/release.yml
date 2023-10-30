@@ -1,0 +1,28 @@
+name: Create GitHub Release
+
+on:
+  push:
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dirs: [accessibility, eleventy]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Add accessibility to eleventy
+        run: cp accessibility/_accessibility.scss eleventy/src/_styles/_accessibility.scss
+      
+      - name: Create zip files
+        run: zip -r ${{ matrix.dirs }} ${{ matrix.dirs }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ matrix.dirs }}

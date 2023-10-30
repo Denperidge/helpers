@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "dev": "yarn eleventy --serve",
+        "build": "yarn eleventy"
+    }
+}
