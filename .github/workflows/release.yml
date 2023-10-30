@@ -9,11 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        dirs: [accessibility, eleventy]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,9 +17,11 @@ jobs:
         run: cp accessibility/_accessibility.scss eleventy/src/_styles/_accessibility.scss
       
       - name: Create zip files
-        run: zip -r ${{ matrix.dirs }}.zip ${{ matrix.dirs }}
+        run: zip -r accessibility.zip accessibility/ && zip -r eleventy.zip eleventy/ 
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ matrix.dirs }}.zip
+          files: |
+            accessibility.zip
+            eleventy.zip
