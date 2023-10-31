@@ -19,3 +19,17 @@ Add one of the following...
 ### Source
 The skip-link element and sr-only class are respectively based on [W3Schools' Skip link page](https://www.w3schools.com/accessibility/accessibility_skip_links.php) and [W3Schools' Heading levels page](https://www.w3schools.com/accessibility/accessibility_heading_levels.php)
 
+
+## Eleventy
+An extractable template with...
+- YAML & SASS/SCSS (including importing from `node_modules`) support
+- Directory structure with `src/` and `dist/`
+- Base template which has a skip-link & allows for custom title + page specific stylesheet import
+- Templates extending base template into page.md & page.pug, which when used get automatically added in nav
+- Classes from [the accessibility section above](#accessibility) built-in
+
+### How-to
+## Usage
+Simply [click here to download eleventy.zip](https://github.com/Denperidge/helpers/releases/latest/download/eleventy.zip) or go to the [releases page](releases/). Then simply extract, and you're set!
+
+## License
